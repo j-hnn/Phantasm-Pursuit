@@ -1,5 +1,10 @@
 res://ScenesAndNodes/world.tscn
 res://ScenesAndNodes/player.tscn
 res://Scripts/player.gd
-res://ray_cast_2d.tscn
-res://RayCast2D.gd
+res://ScenesAndNodes/enemy.tscn
+res://Scripts/enemy.gd
+res://scripts/world.gd
+res://ScenesAndNodes/crumb_trail.tscn
+res://Scripts/crumb_trail.gd
+res://ScenesAndNodes/node_2d.tscn
+res://ScenesAndNodes/player_gui.tscn
