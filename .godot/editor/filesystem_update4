@@ -3,3 +3,10 @@ res://ScenesAndNodes/crumb_trail.tscn
 res://ScenesAndNodes/enemy.tscn
 res://ScenesAndNodes/node_2d.tscn
 res://ScenesAndNodes/world.tscn
+res://Node2D.gd
+res://RayCast2D.gd
+res://ray_cast_2d.tscn
+res://node_2d.tscn
+res://Scripts/laser.gd
+res://ScenesAndNodes/laser.tscn
+res://ScenesAndNodes/player.tscn

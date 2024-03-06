@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://caof7wq5xcl5u"]
+[gd_scene load_steps=12 format=3 uid="uid://caof7wq5xcl5u"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q8vtu"]
 [ext_resource type="Texture2D" uid="uid://b28im35a2avoa" path="res://Assets/FloorPlaceholder.png" id="2_0nbd8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bh7ko35xdtln4" path="res://ScenesAndNodes/player.tscn" id="4_v6j8g"]
 [ext_resource type="PackedScene" uid="uid://bdgd0xah475s" path="res://ScenesAndNodes/player_gui.tscn" id="5_tk1to"]
 [ext_resource type="PackedScene" uid="uid://dih0xrjiohqci" path="res://ScenesAndNodes/enemy.tscn" id="5_yeudq"]
+[ext_resource type="PackedScene" uid="uid://mbi1y06fgisl" path="res://ScenesAndNodes/laser.tscn" id="7_q67eb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_x6plq"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -50,3 +51,5 @@ position = Vector2(114, 123)
 [node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="PlayerGUI" parent="player/Camera2D" instance=ExtResource("5_tk1to")]
+
+[node name="laser" parent="player" instance=ExtResource("7_q67eb")]
