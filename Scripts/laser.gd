@@ -1,21 +1,15 @@
-extends Node2D
+extends CharacterBody2D
 
-@onready var laser_sprite = $LaserSprite
+var speed = 500
 
-var laser_length = 0
-var laser_range = 5
+func _ready():
+	await get_tree().create_timer(5).timeout
+	queue_free()
+	
+func _physics_process(delta):
+	velocity = transform.x * speed
+	move_and_slide()
 
-func _process(delta):
-	look_at(get_global_mouse_position())
- 
-func _input(event):
-	if event.is_action_pressed("click"):
-		laser_length = laser_range
-		update_beam()
-	elif event.is_action_released("click"):
-		laser_length = 0
-		update_beam()
 
-func update_beam():
-	# Update the laser beam's length
-	laser_sprite.scale.x = laser_length
+func _on_hitbox_body_entered(body):
+	queue_free()

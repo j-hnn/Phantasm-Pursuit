@@ -1,9 +1,10 @@
 res://ScenesAndNodes/player_gui.tscn
 res://ScenesAndNodes/crumb_trail.tscn
 res://ScenesAndNodes/enemy.tscn
-res://ScenesAndNodes/world.tscn
 res://ScenesAndNodes/laser.tscn
-res://ScenesAndNodes/player.tscn
-res://laserbeamtest.gd
-res://laserbeamtest.tscn
+res://ScenesAndNodes/world.tscn
+res://player.tscn
 res://Scripts/enemy.gd
+res://Scripts/laser.gd
+res://player.gd
+res://ScenesAndNodes/world.gd

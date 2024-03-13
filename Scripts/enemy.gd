@@ -25,3 +25,8 @@ func create_crumb_trail():
 func _on_timer_timeout():
 	makepath()
 	create_crumb_trail()
+
+
+func _on_hitbox_body_entered(body):
+	if body == player:
+		queue_free()

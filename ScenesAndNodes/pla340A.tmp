@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8m2xe"]
 [ext_resource type="Texture2D" uid="uid://dw18bysbq1bid" path="res://Assets/icon.svg" id="2_mh735"]
-[ext_resource type="PackedScene" uid="uid://cm3rbp6hoikto" path="res://laserbeamtest.tscn" id="3_x0xm3"]
+[ext_resource type="PackedScene" uid="uid://mbi1y06fgisl" path="res://ScenesAndNodes/laser.tscn" id="3_lgxpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uagir"]
 size = Vector2(128, 128)
@@ -20,4 +20,4 @@ shape = SubResource("RectangleShape2D_uagir")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="laserbeamtest" parent="." instance=ExtResource("3_x0xm3")]
+[node name="laser" parent="." instance=ExtResource("3_lgxpr")]

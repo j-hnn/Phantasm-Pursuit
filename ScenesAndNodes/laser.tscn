@@ -1,20 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://mbi1y06fgisl"]
+[gd_scene load_steps=6 format=3 uid="uid://c3xnggwolsokn"]
 
-[ext_resource type="Script" path="res://Scripts/laser.gd" id="1_s27se"]
-[ext_resource type="Texture2D" uid="uid://bqocelsyo30d7" path="res://Assets/LaserBeamPlaceholder.png" id="2_v38hl"]
+[ext_resource type="Script" path="res://Scripts/laser.gd" id="1_u4304"]
+[ext_resource type="Texture2D" uid="uid://bqocelsyo30d7" path="res://Assets/LaserBeamPlaceholder.png" id="2_sl1w1"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53e1o"]
-height = 61.9985
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f73d"]
+size = Vector2(60, 20)
 
-[node name="laser" type="Node2D"]
-script = ExtResource("1_s27se")
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gdr14"]
+emission_shape = 1
+emission_sphere_radius = 5.0
+particle_flag_disable_z = true
+gravity = Vector3(-100, 0, 0)
+angular_velocity_min = -257.68
+angular_velocity_max = -257.68
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 2.0
+color = Color(0, 1, 1, 1)
+hue_variation_min = 0.61
+hue_variation_max = 0.61
 
-[node name="LaserSprite" type="Sprite2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec4fc"]
+size = Vector2(14, 52)
+
+[node name="laser" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_u4304")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_v38hl")
+texture = ExtResource("2_sl1w1")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7f73d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-rotation = -1.56386
-shape = SubResource("CapsuleShape2D_53e1o")
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-30, -1)
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_gdr14")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(27, 1)
+shape = SubResource("RectangleShape2D_ec4fc")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
